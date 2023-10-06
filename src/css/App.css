@@ -1,1 +1,17 @@
 @import "https://unpkg.com/nes.css@latest/css/nes.min.css";
+
+@import url(./Editor.css);
+
+@import url(./Selector.css);
+
+.App {
+  text-align: center;
+  max-width: 95vw;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+
+.hidden {
+  display: none !important;
+}
