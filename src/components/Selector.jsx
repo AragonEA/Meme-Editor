@@ -12,5 +12,13 @@ const Selector = () => {
   )
 }
 
+function ShowEditor() {
+  document.querySelector('#editor').className = ''
+}
+
+function hideTemplateSelector() {
+  document.querySelector('#imageSelector').className = 'hidden';
+}
+
 
 export default Selector;
