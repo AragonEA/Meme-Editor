@@ -39,10 +39,15 @@ const Editor = () => {
 
 function handleClick(){
     hideEditor();
+    showTemplateSelector();
 }
 
 function hideEditor() {
     document.querySelector('#editor').className = 'hidden'
+}
+
+function showTemplateSelector() {
+    document.querySelector('#imageSelector').className = '';
 }
 
 export default Editor;
