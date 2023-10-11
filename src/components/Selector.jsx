@@ -1,3 +1,5 @@
+import Api from "./Api";
+
 export const handleClick = (e) => {
   const editorImg = document.querySelector('.meme-img');
   hideTemplateSelector();
@@ -8,6 +10,7 @@ export const handleClick = (e) => {
 const Selector = () => {
   return (
     <section id="imageSelector" className="hidden">
+      <Api />
     </section>
   )
 }
