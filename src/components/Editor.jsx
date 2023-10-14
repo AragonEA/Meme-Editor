@@ -2,13 +2,14 @@ import html2canvas from "html2canvas";
 import React, { useState } from "react";
 
 const downloadMeme = (e) => {
-    html2canvas(document.querySelector("#export")).then(function (canvas) {
-        let img = canvas.toDataURL("memes/jpg");
-        let link = document.createElement("a");
-        link.download = "meme.jpg";
-        link.href = img;
-        link.click();
-    });
+    html2canvas(document.querySelector("#export"), { useCORS: true })
+        .then(canvas => {
+            let img = canvas.toDataURL("memes/jpg");
+            let link = document.createElement("a");
+            link.download = "meme.jpg";
+            link.href = img;
+            link.click();
+        })
 }
 
 const Editor = () => {
@@ -37,7 +38,7 @@ const Editor = () => {
     )
 }
 
-function handleClick(){
+function handleClick() {
     hideEditor();
     showTemplateSelector();
 }
