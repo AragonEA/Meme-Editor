@@ -5,6 +5,7 @@ const Editor = () => {
 
     const [memeText, setMemeText] = useState();
     const [fontColor, setFontColor] = useState();
+    const [fontSize, setFontSize] = useState(50);
 
     return (
         <div>
@@ -21,13 +22,17 @@ const Editor = () => {
                                 <label for="fontColor">Color:</label>
                                 <input onChange={e => setFontColor(e.target.value)} value={fontColor} type="color" id="fontColor" />
                             </div>
+                            <div>
+                                <label for="fontSize">Font size:</label>
+                                <input onChange={e => setFontSize(e.target.value)} value={fontSize} type="number" id="fontSize" name="fontSize" max="150" placeholder="50" /> px
+                            </div>
                         </div>
                     </section>
                 </div>
 
                 <figure className="meme-figure" id="export">
                     <img src="" className="meme-img" alt="" />
-                    <figcaption style={{ color: `${fontColor}`}} className="meme-text">{memeText}</figcaption>
+                    <figcaption style={{ color: `${fontColor}`,fontSize: `${fontSize}px` }} className="meme-text">{memeText}</figcaption>
                 </figure>
             </section >
         </div>
