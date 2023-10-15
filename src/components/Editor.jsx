@@ -6,6 +6,8 @@ const Editor = () => {
     const [memeText, setMemeText] = useState();
     const [fontColor, setFontColor] = useState();
     const [fontSize, setFontSize] = useState(50);
+    const [xAxis, setXAxis] = useState(0)
+    const [yAxis, setYAxis] = useState(0)
 
     return (
         <div>
@@ -26,13 +28,24 @@ const Editor = () => {
                                 <label for="fontSize">Font size:</label>
                                 <input onChange={e => setFontSize(e.target.value)} value={fontSize} type="number" id="fontSize" name="fontSize" max="150" placeholder="50" /> px
                             </div>
+                            <div>
+                                <div>
+                                    <label for="X">Position X:</label>
+                                    <input onChange={e => setXAxis(e.target.value)} value={xAxis} type="range" id="positionX" name="X" min="-1000" max="1000" />
+                                </div>
+                                <div>
+                                    <label for="Y">Position Y:</label>
+                                    <input onChange={e => setYAxis(e.target.value)} value={yAxis} type="range" id="positionY" name="Y" min="-1000" max="1000" />
+                                </div>
+                            </div>
+                        </div>
                         </div>
                     </section>
                 </div>
 
                 <figure className="meme-figure" id="export">
                     <img src="" className="meme-img" alt="" />
-                    <figcaption style={{ color: `${fontColor}`,fontSize: `${fontSize}px` }} className="meme-text">{memeText}</figcaption>
+                    <figcaption style={{ color: `${fontColor}`,fontSize: `${fontSize}px`, transform: `translate(${xAxis}px, ${yAxis}px)` }} className="meme-text">{memeText}</figcaption>
                 </figure>
             </section >
         </div>
