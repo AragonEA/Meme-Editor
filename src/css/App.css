@@ -6,12 +6,41 @@
 
 .App {
   text-align: center;
-  max-width: 95vw;
+  max-width: 98.5vw;
+  min-height: 98.5vh;
   margin: 0 auto;
   margin-top: 10px;
 }
 
-
 .hidden {
   display: none !important;
+}
+
+
+@media only screen and (min-width: 0px) and (max-width: 1000px) {
+  #editor {
+    display: block;
+  }
+
+  .App {
+    margin: 5px;
+  }
+
+  .nes-container {
+    padding: 0.5rem;
+  }
+
+  .title {
+    padding: 1rem !important;
+  }
+
+  #templates-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 550px) {
+  #templates-grid {
+    grid-template-columns: 1fr;
+  }
 }
