@@ -51,6 +51,7 @@ const Editor = () => {
                                 <label for="memeWidth">Image width:</label>
                                 <input onChange={e => setMemeWidth(e.target.value)} value={memeWidth} type="number" id="memeWidth" name="memeWidth" min="100" max="1500" placeholder="100" /> px
                             </div>
+                            <button onClick={setDefaultSize} type="button" className="nes-btn">Default size</button>
                         </div>
                     </section>
                 </div>
@@ -74,6 +75,12 @@ const downloadMeme = (e) => {
             link.href = img;
             link.click();
         })
+}
+
+function setDefaultSize() {
+    const img = document.querySelector('.meme-img');
+    img.style.height = '100%';
+    img.style.width = '100%';
 }
 
 function handleClick() {
