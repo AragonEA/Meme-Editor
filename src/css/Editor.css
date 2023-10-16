@@ -2,6 +2,8 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: 5px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 
@@ -13,22 +15,27 @@
     word-break: break-word;
     color: white;
     font-weight: bold;
-    font-size: 3rem;
-    text-shadow: 0 0 3px #FF0000, 0 0 5px #000000;
 }
 
 .meme-figure img {
-    width: 100%;
+    border-color: #000;
+    border-style: solid;
+    border-width: 4px;
     height: 100%;
-    /* max-height: 68vh; */
+    width: 100%;
 }
 
 .meme-figure {
     position: relative;
+    margin: 0;
 }
 
 .meme-figure figcaption {
     position: absolute;
     padding: 0 20px;
     font-size: 5vw;
+}
+
+.options-container {
+    margin-top: 1.5rem;
 }
