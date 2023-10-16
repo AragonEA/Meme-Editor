@@ -8,6 +8,8 @@ const Editor = () => {
     const [fontSize, setFontSize] = useState(50);
     const [xAxis, setXAxis] = useState(0)
     const [yAxis, setYAxis] = useState(0)
+    const [memeHeight, setMemeHeight] = useState()
+    const [memeWidth, setMemeWidth] = useState()
 
     return (
         <div>
@@ -39,13 +41,23 @@ const Editor = () => {
                                 </div>
                             </div>
                         </div>
+                        <div className="nes-container  with-title is-centered options-container">
+                            <p class="title">Image</p>
+                            <div>
+                                <label for="memeHeight">Image height:</label>
+                                <input onChange={e => setMemeHeight(e.target.value)} value={memeHeight} type="number" id="memeHeight" name="memeHeight" min="100" max="1500" placeholder="100" /> px
+                            </div>
+                            <div>
+                                <label for="memeWidth">Image width:</label>
+                                <input onChange={e => setMemeWidth(e.target.value)} value={memeWidth} type="number" id="memeWidth" name="memeWidth" min="100" max="1500" placeholder="100" /> px
+                            </div>
                         </div>
                     </section>
                 </div>
 
                 <figure className="meme-figure" id="export">
-                    <img src="" className="meme-img" alt="" />
                     <figcaption style={{ color: `${fontColor}`,fontSize: `${fontSize}px`, transform: `translate(${xAxis}px, ${yAxis}px)` }} className="meme-text">{memeText}</figcaption>
+                    <img style={{ height: `${memeHeight}px`, width: `${memeWidth}px` }} src="https://i.imgflip.com/2wifvo.jpg" className="meme-img" />
                 </figure>
             </section >
         </div>
