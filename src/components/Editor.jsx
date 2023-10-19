@@ -4,6 +4,7 @@ import React, { useState } from "react";
 const Editor = () => {
 
     const [memeText, setMemeText] = useState();
+    const [memeText2, setMemeText2] = useState();
     const [fontColor, setFontColor] = useState('#000000');
     const [fontSize, setFontSize] = useState(50);
     const [xAxis, setXAxis] = useState(0)
@@ -19,6 +20,7 @@ const Editor = () => {
                 <div className="nes-container with-title is-centered">
                     <p class="title">Options</p>
                     <input onChange={e => setMemeText(e.target.value)} className="nes-input input" type="text" placeholder="Enter your text" name="meme" arial-label="default input example" />
+                    <input onChange={e => setMemeText2(e.target.value)} className="nes-input input" type="text" placeholder="Enter secondary text" name="meme" arial-label="default input example" />
                     <button onClick={handleClick} type="button" className="nes-btn">Select Image</button>
                     <button onClick={downloadMeme} type="button" className="nes-btn">Download image</button>
                     <section>
@@ -34,12 +36,16 @@ const Editor = () => {
                             </div>
                             <div>
                                 <div>
-                                    <label for="X">Position X:</label>
+                                    <label for="X">Primary text <b>X</b> coordinates:</label>
                                     <input onChange={e => setXAxis(e.target.value)} value={xAxis} type="range" id="positionX" name="X" min="-1000" max="1000" />
+                                    <label for="Y">Primary text <b>Y</b> coordinates:</label>
+                                    <input onChange={e => setYAxis(e.target.value)} value={yAxis} type="range" id="positionY" name="Y" min="-1000" max="1000" />
                                 </div>
                                 <div>
-                                    <label for="Y">Position Y:</label>
-                                    <input onChange={e => setYAxis(e.target.value)} value={yAxis} type="range" id="positionY" name="Y" min="-1000" max="1000" />
+                                    <label for="X2">Secondary text <b>X</b> coordinates:</label>
+                                    <input onChange={e => setXAxis2(e.target.value)} value={xAxis2} type="range" id="positionX" name="X2" min="-1000" max="1000" />
+                                    <label for="Y2">Secondary text <b>Y</b> coordinates:</label>
+                                    <input onChange={e => setYAxis2(e.target.value)} value={yAxis2} type="range" id="positionY" name="Y2" min="-1000" max="1000" />
                                 </div>
                             </div>
                         </div>
@@ -59,8 +65,8 @@ const Editor = () => {
                 </div>
 
                 <figure className="meme-figure" id="export">
-                    <figcaption style={{ color: `${fontColor}`,fontSize: `${fontSize}px`, transform: `translate(${xAxis}px, ${yAxis}px)` }} className="meme-text">{memeText}</figcaption>
-                    <img style={{ height: `${memeHeight}px`, width: `${memeWidth}px` }} src="https://i.imgflip.com/2wifvo.jpg" className="meme-img" />
+                    <figcaption style={{ color: `${fontColor}`, fontSize: `${fontSize}px`, transform: `translate(${xAxis}px, ${yAxis}px)` }} className="meme-text">{memeText}</figcaption>
+                    <figcaption style={{ color: `${fontColor}`, fontSize: `${fontSize}px`, transform: `translate(${xAxis2}px, ${yAxis2}px)` }} className="meme-text">{memeText2}</figcaption>
                     <img style={{ height: `${memeHeight}px`, width: `${memeWidth}px` }} src="https://i.imgflip.com/46e43q.png" className="meme-img" />
                 </figure>
             </section >
