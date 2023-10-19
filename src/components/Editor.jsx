@@ -4,10 +4,12 @@ import React, { useState } from "react";
 const Editor = () => {
 
     const [memeText, setMemeText] = useState();
-    const [fontColor, setFontColor] = useState();
+    const [fontColor, setFontColor] = useState('#000000');
     const [fontSize, setFontSize] = useState(50);
     const [xAxis, setXAxis] = useState(0)
     const [yAxis, setYAxis] = useState(0)
+    const [xAxis2, setXAxis2] = useState(0)
+    const [yAxis2, setYAxis2] = useState(0)
     const [memeHeight, setMemeHeight] = useState()
     const [memeWidth, setMemeWidth] = useState()
 
@@ -59,6 +61,7 @@ const Editor = () => {
                 <figure className="meme-figure" id="export">
                     <figcaption style={{ color: `${fontColor}`,fontSize: `${fontSize}px`, transform: `translate(${xAxis}px, ${yAxis}px)` }} className="meme-text">{memeText}</figcaption>
                     <img style={{ height: `${memeHeight}px`, width: `${memeWidth}px` }} src="https://i.imgflip.com/2wifvo.jpg" className="meme-img" />
+                    <img style={{ height: `${memeHeight}px`, width: `${memeWidth}px` }} src="https://i.imgflip.com/46e43q.png" className="meme-img" />
                 </figure>
             </section >
         </div>
