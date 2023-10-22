@@ -5,7 +5,7 @@ const Editor = () => {
 
     const [memeText, setMemeText] = useState();
     const [memeText2, setMemeText2] = useState();
-    const [fontColor, setFontColor] = useState('#000000');
+    const [fontColor, setFontColor] = useState();
     const [fontSize, setFontSize] = useState(50);
     const [xAxis, setXAxis] = useState(0)
     const [yAxis, setYAxis] = useState(0)
